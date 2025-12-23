@@ -10,7 +10,7 @@ A simple and effective command-line Pomodoro Timer application built with Node.j
 ✅ **Graceful Shutdown** - Stop the timer anytime with Ctrl+C  
 ✅ **Input Validation** - Ensures only valid positive durations are accepted  
 ✅ **Auto-cycling Sessions** - Automatically switches between work and break sessions  
-✅ **Clean Code** - Well-organized, documented, and maintainable codebase  
+✅ **Clean Code** - Well-organized, documented, and maintainable codebase
 
 ## Requirements
 
@@ -20,12 +20,14 @@ A simple and effective command-line Pomodoro Timer application built with Node.j
 ## Installation
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/<YOUR_USERNAME>/pomoTimer.git
 cd pomoTimer
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
@@ -33,11 +35,13 @@ npm install
 ## Usage
 
 ### Basic Usage (Default: 25 min work + 5 min break)
+
 ```bash
 node ./index.js
 ```
 
 ### Custom Duration
+
 ```bash
 node ./index.js <work_duration> <break_duration>
 ```
@@ -45,6 +49,7 @@ node ./index.js <work_duration> <break_duration>
 ### Examples
 
 **Standard Pomodoro (25 min work, 5 min break):**
+
 ```bash
 node ./index.js
 # or
@@ -52,11 +57,13 @@ node ./index.js 25 5
 ```
 
 **Short Sessions (10 min work, 2 min break):**
+
 ```bash
 node ./index.js 10 2
 ```
 
 **Testing (30 seconds work, 30 seconds break):**
+
 ```bash
 node ./index.js 0.5 0.5
 ```
@@ -71,6 +78,7 @@ node ./index.js 0.5 0.5
 6. **Stop Anytime** - Press `Ctrl+C` to exit
 
 ### Output Example
+
 ```
 ⏱️  Pomodoro Timer Started!
 📌 Work: 25 min | Break: 5 min
@@ -116,12 +124,14 @@ See `package.json` for more details.
 ## Tips & Best Practices
 
 💡 **Pomodoro Technique Tips:**
+
 - Focus completely during work sessions
 - Take breaks seriously - step away from your desk
 - After 4 pomodoros, take a longer break (15-30 min)
 - Adjust duration based on your productivity patterns
 
 🔧 **Usage Tips:**
+
 - Use `0.5 0.5` for quick testing (30 seconds each)
 - Customize durations based on task complexity
 - Run in a persistent terminal so notifications appear even if window is hidden
@@ -129,13 +139,16 @@ See `package.json` for more details.
 ## Troubleshooting
 
 **Issue:** Timer shows default values instead of custom input
+
 - **Solution:** Make sure to use valid positive numbers as arguments
 
 **Issue:** No desktop notification appears
+
 - **Solution:** Check system notification settings are enabled
 - On Windows: Ensure notifications are not disabled in Settings > System > Notifications
 
 **Issue:** "node-notifier" dependency error
+
 - **Solution:** Run `npm install` to install all dependencies
 
 ## License
