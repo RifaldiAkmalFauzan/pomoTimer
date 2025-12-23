@@ -17,67 +17,77 @@ A simple and effective command-line Pomodoro Timer application built with Node.j
 - **Node.js** (v12.0 or higher)
 - **npm** (comes with Node.js)
 
-## Installation
+# ⏱️ Pomodoro Timer
 
-1. Clone the repository:
+Aplikasi Pomodoro sederhana berbasis command-line (Node.js) untuk membantu mengatur sesi kerja dan istirahat dengan notifikasi desktop.
+
+## Fitur
+
+- ✅ Durasi dapat dikustomisasi — Atur durasi kerja dan istirahat sesuai kebutuhan
+- ✅ Notifikasi desktop — Notifikasi muncul saat sesi berakhir
+- ✅ Tampilan CLI yang bersih — Hitungan mundur realtime dalam format HH:MM:SS
+- ✅ Shutdown yang rapi — Hentikan timer kapan saja dengan `Ctrl+C`
+- ✅ Validasi input — Pastikan durasi yang dimasukkan berupa angka positif
+- ✅ Siklus otomatis — Berganti antara sesi kerja dan istirahat secara otomatis
+
+## Persyaratan
+
+- Node.js (v12.0 atau lebih baru)
+- npm (sudah termasuk di Node.js)
+
+## Instalasi
+
+1. Clone repository:
 
 ```bash
 git clone https://github.com/<YOUR_USERNAME>/pomoTimer.git
 cd pomoTimer
 ```
 
-2. Install dependencies:
+2. Install dependency:
 
 ```bash
 npm install
 ```
 
-## Usage
+## Penggunaan
 
-### Basic Usage (Default: 25 min work + 5 min break)
+### Jalankan (Default: 25 menit kerja + 5 menit istirahat)
 
 ```bash
 node ./index.js
 ```
 
-### Custom Duration
+### Atur durasi sendiri
 
 ```bash
 node ./index.js <work_duration> <break_duration>
 ```
 
-### Examples
+Contoh:
 
-**Standard Pomodoro (25 min work, 5 min break):**
-
+- Pomodoro standar (25/5):
 ```bash
-node ./index.js
-# or
 node ./index.js 25 5
 ```
-
-**Short Sessions (10 min work, 2 min break):**
-
+- Sesi singkat (10/2):
 ```bash
 node ./index.js 10 2
 ```
-
-**Testing (30 seconds work, 30 seconds break):**
-
+- Untuk testing cepat (30 detik kerja, 30 detik istirahat):
 ```bash
 node ./index.js 0.5 0.5
 ```
 
-## How It Works
+## Cara Kerja
 
-1. **Timer Starts** - Begins with Work Time
-2. **Countdown** - Shows remaining time in real-time
-3. **Session Ends** - Desktop notification appears when time's up
-4. **Auto-Switch** - Automatically switches to break time (or work time after break)
-5. **Continuous Loop** - Cycles between work and break sessions indefinitely
-6. **Stop Anytime** - Press `Ctrl+C` to exit
+1. Program memulai dengan sesi kerja (Work)
+2. Menampilkan hitungan mundur setiap detik
+3. Saat waktu habis, munculkan notifikasi desktop
+4. Secara otomatis berpindah ke sesi berikutnya (Work ↔ Break)
+5. Siklus berlangsung terus hingga dihentikan dengan `Ctrl+C`
 
-### Output Example
+### Contoh Output
 
 ```
 ⏱️  Pomodoro Timer Started!
@@ -87,78 +97,55 @@ Press Ctrl+C to stop
 Work Time Remaining: 00:24:55
 Work Time Remaining: 00:24:54
 ...
-[Desktop notification appears when time ends]
+[Notifikasi desktop muncul saat sesi berakhir]
 Break Time Remaining: 00:04:59
 ...
 ```
 
-## Project Structure
+## Struktur Proyek
 
 ```
 pomoTimer/
-├── index.js          # Main application file
-├── package.json      # Project metadata & dependencies
-└── README.md         # This file
+├── index.js          # File utama aplikasi
+├── package.json      # Metadata & dependency
+└── README.md         # Dokumentasi ini
 ```
 
-## Code Architecture
+## Arsitektur Kode
 
-The code is organized into logical sections:
+Kode dibagi menjadi bagian-logis:
 
-- **Constants** - Default durations and intervals
-- **Configuration** - Parse command-line arguments
-- **Validation** - Validate input durations
-- **UI & Shutdown** - Display messages and handle graceful exit
-- **State** - Manage timer state variables
-- **Utilities** - Helper functions (time formatting, notifications)
-- **Timer Logic** - Core timer and session management
-- **Entry** - Application startup
+- **Constants** — Nilai default dan interval
+- **Configuration** — Parsing argumen command-line
+- **Validation** — Validasi durasi input
+- **UI & Shutdown** — Pesan awal dan penanganan keluar program
+- **State** — Variabel state timer
+- **Utilities** — Fungsi bantu (format waktu, notifikasi)
+- **Timer Logic** — Logika utama timer dan manajemen sesi
+- **Entry** — Titik masuk aplikasi
 
-## Dependencies
+## Dependensi
 
-- **node-notifier** - Cross-platform desktop notifications
-- **moment** - DateTime library for time formatting
+- `node-notifier` — Notifikasi desktop lintas-platform
+- `moment` — Utility untuk format waktu
 
-See `package.json` for more details.
+## Tips & Praktik
 
-## Tips & Best Practices
-
-💡 **Pomodoro Technique Tips:**
-
-- Focus completely during work sessions
-- Take breaks seriously - step away from your desk
-- After 4 pomodoros, take a longer break (15-30 min)
-- Adjust duration based on your productivity patterns
-
-🔧 **Usage Tips:**
-
-- Use `0.5 0.5` for quick testing (30 seconds each)
-- Customize durations based on task complexity
-- Run in a persistent terminal so notifications appear even if window is hidden
+- Gunakan `0.5 0.5` untuk testing cepat (30 detik)
+- Sesuaikan durasi berdasarkan tingkat fokus tugas
+- Jalankan di terminal yang tetap terbuka agar notifikasi muncul
 
 ## Troubleshooting
 
-**Issue:** Timer shows default values instead of custom input
+- **Timer menampilkan nilai default** — Pastikan argumen yang diberikan adalah angka positif
+- **Tidak muncul notifikasi** — Periksa pengaturan notifikasi sistem
+- **Error terkait dependency** — Jalankan `npm install`
 
-- **Solution:** Make sure to use valid positive numbers as arguments
+## Lisensi
 
-**Issue:** No desktop notification appears
-
-- **Solution:** Check system notification settings are enabled
-- On Windows: Ensure notifications are not disabled in Settings > System > Notifications
-
-**Issue:** "node-notifier" dependency error
-
-- **Solution:** Run `npm install` to install all dependencies
-
-## License
-
-This project is open source and available under the MIT License.
-
-## Contributing
-
-Feel free to fork, modify, and improve this project!
+Proyek ini bersifat open-source (MIT License).
 
 ---
 
-**Happy Pomodoro Sessions! 🍅⏱️**
+Semoga sesi Pomodoro-mu produktif! 🍅⏱️
+
