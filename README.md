@@ -1,24 +1,5 @@
 # ⏱️ Pomodoro Timer
 
-A simple and effective command-line Pomodoro Timer application built with Node.js. Helps you manage your work sessions and break times with desktop notifications.
-
-## Features
-
-✅ **Customizable Duration** - Set your own work and break time intervals  
-✅ **Desktop Notifications** - Get notified when sessions end with system alerts  
-✅ **Clean CLI Output** - Real-time countdown display in HH:MM:SS format  
-✅ **Graceful Shutdown** - Stop the timer anytime with Ctrl+C  
-✅ **Input Validation** - Ensures only valid positive durations are accepted  
-✅ **Auto-cycling Sessions** - Automatically switches between work and break sessions  
-✅ **Clean Code** - Well-organized, documented, and maintainable codebase
-
-## Requirements
-
-- **Node.js** (v12.0 or higher)
-- **npm** (comes with Node.js)
-
-# ⏱️ Pomodoro Timer
-
 Aplikasi Pomodoro sederhana berbasis command-line (Node.js) untuk membantu mengatur sesi kerja dan istirahat dengan notifikasi desktop.
 
 ## Fitur
@@ -40,7 +21,7 @@ Aplikasi Pomodoro sederhana berbasis command-line (Node.js) untuk membantu menga
 1. Clone repository:
 
 ```bash
-git clone https://github.com/<YOUR_USERNAME>/pomoTimer.git
+git clone https://github.com/RifaldiAkmalFauzan/pomoTimer.git
 cd pomoTimer
 ```
 
@@ -140,12 +121,6 @@ Kode dibagi menjadi bagian-logis:
 - **Timer menampilkan nilai default** — Pastikan argumen yang diberikan adalah angka positif
 - **Tidak muncul notifikasi** — Periksa pengaturan notifikasi sistem
 - **Error terkait dependency** — Jalankan `npm install`
-
-## Lisensi
-
-Proyek ini bersifat open-source (MIT License).
-
----
 
 Semoga sesi Pomodoro-mu produktif! 🍅⏱️
 
